@@ -1,0 +1,64 @@
+<script type="text/javascript">
+  RED.nodes.registerType('tv_list',{
+    category: 'TV Widgets',
+    defaults: {
+      screen: { value:"" , type: "screen", required: true },
+      name: { value: "", required: true },
+      icon: { value: "" },
+      color: { value: "#12b0c5" },
+      moreInfo: { value: "" }
+    },
+    inputs: 1,
+    align: 'right',
+    color: 'rgb(119, 198, 204)',
+    icon: "font-awesome/fa-list",
+    paletteLabel: 'list',
+    label: function() {
+      return this.name || "list";
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="tv_list">
+  <div class="form-row">
+    <label for="node-input-screen"><i class="icon-tag"></i> Screen</label>
+    <select id="node-input-screen"></select>
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-icon"><i class="icon-tag"></i> Icon</label>
+    <input type="text" id="node-input-icon" placeholder="Font awesome 5 icon name(ex. fa-arrow-up)">
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-color"><i class="icon-tag"></i> Color</label>
+    <input type="text" id="node-input-color" placeholder="Hex color value">
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-moreInfo"><i class="icon-tag"></i> More info</label>
+    <input type="text" id="node-input-moreInfo" placeholder="Additional text displayed at the bottom">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="tv_list">
+  <p>This widget displays list from <code>msg.payload</code>.</p>
+  <h3>Inputs</h3>
+  <dl class="message-properties">
+    <dt>payload
+      <span class="property-type">array</span>
+    </dt>
+    <dd>
+      This should be an array of objects with items to display
+      <ul>
+          <li><code>label</code> - title displayed in list on the left side </li>
+          <li><code>value</code> - title displayed in list on the right side </li>
+      </ul>
+    </dd>
+  </dl>
+</script>

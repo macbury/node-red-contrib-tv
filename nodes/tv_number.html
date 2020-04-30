@@ -1,0 +1,68 @@
+<script type="text/javascript">
+  RED.nodes.registerType('tv_number',{
+    category: 'TV Widgets',
+    defaults: {
+      screen: { value:"" , type: "screen", required: true },
+      name: { value: "", required: true },
+      icon: { value: "" },
+      color: { value: "#47bbb3" },
+      stufix: { value: "" },
+      moreInfo: { value: "" }
+    },
+    inputs: 1,
+    align: 'right',
+    color: 'rgb(119, 198, 204)',
+    icon: "font-awesome/fa-info",
+    paletteLabel: 'number',
+    label: function() {
+      return this.name || "number";
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="tv_number">
+  <div class="form-row">
+    <label for="node-input-screen"><i class="icon-tag"></i> Screen</label>
+    <select id="node-input-screen"></select>
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-icon"><i class="icon-tag"></i> Icon</label>
+    <input type="text" id="node-input-icon" placeholder="Font awesome 5 icon name(ex. fa-arrow-up)">
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-color"><i class="icon-tag"></i> Color</label>
+    <input type="text" id="node-input-color" placeholder="Hex color value">
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-moreInfo"><i class="icon-tag"></i> More info</label>
+    <input type="text" id="node-input-moreInfo" placeholder="Additional text displayed at the bottom">
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-stufix"><i class="icon-tag"></i> Stuffix</label>
+    <input type="text" id="node-input-stufix" placeholder="Text added after current value">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="tv_number">
+  <p>This widget displays single number value passed in <code>msg.payload</code>.</p>
+  <h3>Inputs</h3>
+  <dl class="message-properties">
+    <dt>payload
+      <span class="property-type">string | number</span>
+    </dt>
+    <dd> the value you want to display. </dd>
+    <dt>last
+      <span class="property-type">string | number</span>
+    </dt>
+    <dd> previous value, this is used for calculating difference. </dd>
+  </dl>
+</script>

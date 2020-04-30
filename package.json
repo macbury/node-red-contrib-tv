@@ -1,0 +1,49 @@
+{
+  "name": "node-red-tv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev:bootstrap": "mkdir -p ./.red && cd .red && rm -rf node_modules; npm install ../",
+    "dev": "nodemon --watch nodes/ --watch backend/ --exec 'yarn dev:red'",
+    "dev:red": "node-red --verbose --userDir ./.red",
+    "clean": "rm dist/bundle.js",
+    "start": "parcel src/index.html",
+    "build-prod": "parcel build src/index.html"
+  },
+  "node-red": {
+    "nodes": {
+      "screen": "nodes/screen.js",
+      "tv_number": "nodes/tv_number.js",
+      "tv_comments": "nodes/tv_comments.js",
+      "tv_text": "nodes/tv_text.js",
+      "tv_list": "nodes/tv_list.js"
+    }
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@types/react": "^16.9.34",
+    "@types/socket.io": "^2.1.4",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.13.1",
+    "react-addons-transition-group": "^15.6.2",
+    "react-dom": "^16.13.1",
+    "react-grid-layout": "^0.18.3",
+    "sass": "^1.26.5",
+    "socket.io-client": "^2.3.0",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "node-red": "^1.0.6",
+    "nodemon": "^2.0.3",
+    "socket.io": "^2.3.0"
+  }
+}

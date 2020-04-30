@@ -1,0 +1,34 @@
+<script type="text/javascript">
+  RED.nodes.registerType('screen', {
+    category: 'config',
+    defaults: {
+      name: { value: "dashboard", required:true },
+      columns: { value:7, required:true, validate:RED.validators.number() },
+      widgetWidth: { value: 264, required:true, validate:RED.validators.number() },
+      widgetHeight: { value: 258, required:true, validate:RED.validators.number() }
+    },
+
+    label: function() {
+      return `/tv#${this.name}`;
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="screen">
+  <div class="form-row">
+    <label for="node-config-input-name"><i class="icon-bookmark"></i> Name</label>
+    <input type="text" id="node-config-input-name">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-columns"><i class="icon-bookmark"></i> Columns</label>
+    <input type="text" id="node-config-input-columns">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-widgetWidth"><i class="icon-bookmark"></i> Widget width</label>
+    <input type="text" id="node-config-input-widgetWidth">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-widgetHeight"><i class="icon-bookmark"></i> Widget height</label>
+    <input type="text" id="node-config-input-widgetHeight">
+  </div>
+</script>

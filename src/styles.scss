@@ -1,0 +1,191 @@
+@import "../node_modules/react-grid-layout/css/styles.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import "./variables.scss";
+
+
+// ----------------------------------------------------------------------------
+// Base styles
+// ----------------------------------------------------------------------------
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: $background-color;
+  font-size: 20px;
+  color: $text-color;
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#app {
+  flex: 1;
+  display: flex;
+  min-height: 100%;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+img, object {
+  max-width: 100%;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+td {
+  vertical-align: middle;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, p {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 400;
+}
+h2 {
+  text-transform: uppercase;
+  font-size: 56px;
+  font-weight: 700;
+  color: $text-color;
+}
+h3 {
+  font-size: 25px;
+  font-weight: 600;
+  color: $text-color;
+}
+
+.grid-item {
+  overflow: hidden;
+}
+
+.widget {
+  text-align: center;
+  width: inherit;
+  height: inherit;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+.icon-background {
+  pointer-events: none;
+  position: absolute;
+  left: 20px;
+  bottom: -82px;
+  opacity: 0.1;
+  font-size: 275px;
+  text-align: center;
+}
+
+.widget.status-warning {
+  background-color: $background-warning-color-1;
+  @include animation(status-warning-background, 2s, ease, infinite);
+
+  .icon-warning-sign {
+    display: inline-block;
+  }
+
+  .title, .more-info {
+    color: $text-warning-color;
+  }
+}
+
+.widget.status-danger {
+  color: $text-danger-color;
+  background-color: $background-danger-color-1;
+  @include animation(status-danger-background, 2s, ease, infinite);
+
+  .icon-warning-sign {
+    display: inline-block;
+  }
+
+  .title, .more-info {
+    color: $text-danger-color;
+  }
+}
+
+.more-info {
+  font-size: 15px;
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+}
+
+.updated-at {
+  font-size: 15px;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+}
+
+.screen-selectors {
+  display: flex;
+  flex: 1;
+  align-self: center;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+    padding-left: 0px;
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      display: block;
+      min-width: 300px;
+      background-color: $select-screen-button;
+      padding: 10px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Clearfix
+// ----------------------------------------------------------------------------
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
