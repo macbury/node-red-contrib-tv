@@ -1,10 +1,11 @@
 {
-  "name": "node-red-tv",
-  "version": "1.0.0",
-  "description": "",
+  "name": "node-red-contrib-tv",
+  "version": "0.1.0",
+  "homepage": "https://github.com/macbury/node-red-contrib-tv",
+  "description": "Sexy dashboard frontend for node-red",
   "main": "index.js",
-  "keywords": [],
-  "author": "",
+  "keywords": [ "node-red" ],
+  "author": "macbury",
   "license": "ISC",
   "scripts": {
     "dev:bootstrap": "mkdir -p ./.red && cd .red && rm -rf node_modules; npm install ../",

@@ -16,3 +16,4 @@ ehthumbs.db
 Thumbs.db
 dist/**/*
 .red/**/*
+*.tgz

@@ -1,0 +1,6 @@
+.cache/**/*
+.red/**/*
+docs/**/*
+node_modules/**/*
+dist/**/*
+.red/**/*

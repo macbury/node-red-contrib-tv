@@ -24,6 +24,12 @@ yarn dev
 
 This will start node red instance with installed pallete. Every change in `nodes/` or `backend/` directory will restart node red server.
 
+## Publish
+
+```
+npm publish
+```
+
 ## Running
 
 Open the file `http://127.0.0.1:1880/tv` in your browser
