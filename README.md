@@ -38,7 +38,7 @@ npm publish
 
 ## Running
 
-Open the file `http://127.0.0.1:1880/tv` in your browser
+Open the file `http://127.0.0.1:1880/tv` in your browser. If you want to run this kind of dashboard on your raspberry pi I suggest to use [chilipie-kiosk](https://github.com/futurice/chilipie-kiosk).
 
 ## TODO
 
