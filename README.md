@@ -1,8 +1,14 @@
-![preview](./docs/dashboard.gif)
+![preview](https://raw.githubusercontent.com/macbury/node-red-contrib-tv/master/docs/dashboard.gif)
 
-# node-red-tv
+# node-red-contrib-tv
+
+[![npm version](https://badge.fury.io/js/node-red-contrib-tv.svg)](https://badge.fury.io/js/node-red-contrib-tv)
 
 Create nice dynamic dashboards ready to display on big tv screen. Inspired by [smashing](https://smashing.github.io/). Just install this pallete, add widget first and just visit your `node-red` server at `/tv` path and enjoy the view.  
+
+## See it in action:
+
+[![Watch the video](https://img.youtube.com/vi/mTykQGRdKS4/hqdefault.jpg)](https://youtu.be/mTykQGRdKS4)
 
 ## Inspiration
 
