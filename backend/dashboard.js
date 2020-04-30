@@ -63,7 +63,7 @@ class Dashboard {
   }
 
   setupHttp() {
-    const entry = path.resolve('src/index.html')
+    const entry = path.resolve(__dirname, '../src/index.html')
     const bundle = new Bundler(entry, {
       publicUrl: '/tv'
     })

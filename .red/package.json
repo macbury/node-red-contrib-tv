@@ -6,6 +6,7 @@
     "dependencies": {
         "node-red-contrib-feedparser-2": "~0.1.1",
         "node-red-contrib-feedparser-extended": "0.0.2",
+        "node-red-contrib-tv": "file:..",
         "node-red-node-feedparser": "~0.1.15",
         "node-red-tv": "file:.."
     }
