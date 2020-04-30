@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-tv",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "https://github.com/macbury/node-red-contrib-tv",
   "description": "Sexy dashboard frontend for node-red",
   "main": "index.js",
@@ -41,9 +41,9 @@
     "react-dom": "^16.13.1",
     "react-grid-layout": "^0.18.3",
     "sass": "^1.26.5",
+    "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
-    "typescript": "^3.8.3",
-    "socket.io": "^2.3.0"
+    "typescript": "^3.8.3"
   },
   "devDependencies": {
     "node-red": "^1.0.6",
