@@ -50,7 +50,7 @@ export default function CommentsWidget({ widget: { node, state: { comments } } }
       </div>
 
       <p className="updated-at">{lastUpdate.toLocaleTimeString()}</p>
-      {icon && <i className={`fa ${icon} icon-background`}></i>}
+      {icon && <i className={`${icon} icon-background`}></i>}
     </div>
   )
 }

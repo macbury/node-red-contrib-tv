@@ -28,7 +28,7 @@ export default function TextWidget({ widget: { node, state: { text } } } : IWidg
 
       <p className="updated-at">{lastUpdate.toLocaleTimeString()}</p>
 
-      {icon && <i className={`fa ${icon} icon-background`}></i>}
+      {icon && <i className={`${icon} icon-background`}></i>}
     </div>
   )
 }

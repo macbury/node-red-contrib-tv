@@ -37,7 +37,7 @@ export default function ListWidget({ widget: { node, state: { items } } } : IWid
 
       <p className="updated-at">{lastUpdate.toLocaleTimeString()}</p>
 
-      {icon && <i className={`fa ${icon} icon-background`}></i>}
+      {icon && <i className={`${icon} icon-background`}></i>}
     </div>
   )
 }

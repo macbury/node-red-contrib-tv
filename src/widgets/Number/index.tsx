@@ -21,6 +21,10 @@ function getValueChange(diff) {
 }
 
 function formatFixed(value : number) {
+  if (value > 1000) {
+    const numK = Math.round(value / 1000)
+    return `${numK}K`
+  }
   const formatted = value.toFixed(2)
   if (formatted.split('.')[1] === '00') {
     return value
@@ -29,12 +33,13 @@ function formatFixed(value : number) {
   }
 }
 
-export default function NumberWidget({ widget, ...props } : IWidgetProps) {
+export default function NumberWidget({ widget } : IWidgetProps) {
   const last = parseFloat(widget.state.last || 0)
   const current = parseFloat(widget.state.current || 0)
-  const diff = last !== 0 ? Math.abs(Math.round((current - last) / last * 100)) : 0
+  const diff = last !== 0 ? Math.abs(Math.ceil((current - last) / last * 100)) : 0
   const change = getValueChange(diff)
   const lastUpdate = useMemo(() => new Date(), [current])
+
   const {
     stufix,
     icon,
@@ -56,7 +61,7 @@ export default function NumberWidget({ widget, ...props } : IWidgetProps) {
 
       <p className="updated-at">{lastUpdate.toLocaleTimeString()}</p>
 
-      {icon && <i className={`fa ${icon} icon-background`}></i>}
+      {icon && <i className={`${icon} icon-background`}></i>}
     </div>
   )
 }
