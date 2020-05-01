@@ -7,8 +7,8 @@ import Grid from './Grid'
 export default function ScreenSelector() {
   const [screens, setScreens] = useState<Array<TScreenInfo>>([])
   const currentScreen = useLocationHash()
-  const screenId = screens.find(({ name }) => name === currentScreen)?.id
-  const screen = useScreen(screenId)
+  const screenByName = screens.find(({ name }) => name === currentScreen)
+  const screen = useScreen(screenByName && screenByName.id)
 
   useSocketScreensInit(setScreens)
 

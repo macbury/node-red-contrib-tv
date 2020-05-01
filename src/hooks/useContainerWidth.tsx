@@ -6,7 +6,7 @@ export default function useContainerWidth() {
 
   useLayoutEffect(() => {
     const onResize = function() {
-      if (ref?.current) {
+      if (ref && ref.current) {
         setWidth(ref.current.clientWidth)
       }
     }

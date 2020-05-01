@@ -18,12 +18,12 @@ export default function ListWidget({ widget: { node, state: { items } } } : IWid
     moreInfo
   } : IListConfig = node && node.config || {}
 
-  const listItems = items?.map(({ label, value }) => (
+  const listItems = items ? items.map(({ label, value }) => (
     <li key={label}>
       <span className="label">{label}</span>
       <span className="value">{value}</span>
     </li>
-  ))
+  )) : []
 
   return (
     <div className="widget widget-list" style={{ backgroundColor }}>

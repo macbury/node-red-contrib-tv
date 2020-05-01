@@ -23,7 +23,7 @@ export default function CommentsWidget({ widget: { node, state: { comments } } }
     color: backgroundColor,
     name,
     nextIn
-  } : ICommentsConfig = node?.config || {}
+  } : ICommentsConfig = node && node.config || {}
 
   useEffect(() => {
     const interval = (nextIn || 8) * 1000
@@ -45,8 +45,8 @@ export default function CommentsWidget({ widget: { node, state: { comments } } }
       <h1 className="title">{name}</h1>
 
       <div className={`comment-container ${effectClassName}`}>
-        <h3><span className="name">{currentComment?.title}</span></h3>
-        <p className="comment">{currentComment?.body}</p>
+        <h3><span className="name">{currentComment && currentComment.title}</span></h3>
+        <p className="comment">{currentComment && currentComment.body}</p>
       </div>
 
       <p className="updated-at">{lastUpdate.toLocaleTimeString()}</p>
