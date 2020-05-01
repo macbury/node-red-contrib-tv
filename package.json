@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-tv",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/macbury/node-red-contrib-tv",
   "description": "Sexy dashboard frontend for node-red",
   "main": "index.js",
