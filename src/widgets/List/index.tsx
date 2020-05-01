@@ -16,7 +16,7 @@ export default function ListWidget({ widget: { node, state: { items } } } : IWid
     color: backgroundColor,
     name,
     moreInfo
-  } : IListConfig = node?.config || {}
+  } : IListConfig = node && node.config || {}
 
   const listItems = items?.map(({ label, value }) => (
     <li key={label}>

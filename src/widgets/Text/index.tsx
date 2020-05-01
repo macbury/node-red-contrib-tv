@@ -16,7 +16,7 @@ export default function TextWidget({ widget: { node, state: { text } } } : IWidg
     color: backgroundColor,
     name,
     moreInfo
-  } : ITextConfig = node?.config || {}
+  } : ITextConfig = node && node.config || {}
 
   return (
     <div className="widget widget-text" style={{ backgroundColor }}>

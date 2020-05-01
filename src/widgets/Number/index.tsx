@@ -39,14 +39,14 @@ export default function NumberWidget({ widget } : IWidgetProps) {
   const diff = last !== 0 ? Math.abs(Math.ceil((current - last) / last * 100)) : 0
   const change = getValueChange(diff)
   const lastUpdate = useMemo(() => new Date(), [current])
-
+  const { node } = widget
   const {
     stufix,
     icon,
     moreInfo,
     color: backgroundColor,
     name
-  } : INumberConfig = widget?.node?.config || {}
+  } : INumberConfig = node && node.config || {}
 
   return (
     <div className="widget widget-number" style={{ backgroundColor }}>
