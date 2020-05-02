@@ -37,7 +37,7 @@ export default function NumberWidget({ widget } : IWidgetProps) {
   const last = parseFloat(widget.state.last || 0)
   const current = parseFloat(widget.state.current || 0)
   const diff = last !== 0 ? Math.abs(Math.ceil((current - last) / last * 100)) : 0
-  const change = getValueChange(diff)
+  const change = getValueChange(current - last)
   const lastUpdate = useMemo(() => new Date(), [current])
   const { node } = widget
   const {
