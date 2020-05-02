@@ -30,7 +30,9 @@ export default function CommentsWidget({ widget: { node, state: { comments } } }
     const handler = setInterval(() => {
       setEffect('fadeOut')
       setTimeout(() => {
-        setCurrentCommentIndex(prevIndex => (prevIndex + 1) % comments.length)
+        setCurrentCommentIndex((prevIndex) => {
+          return (prevIndex + 1) % Math.max(comments.length, 1)
+        })
         setEffect('fadeIn')
       }, 600)
 
@@ -38,15 +40,15 @@ export default function CommentsWidget({ widget: { node, state: { comments } } }
     return () => clearTimeout(handler)
   }, [nextIn, comments])
 
-  const currentComment = comments ? comments[currentCommentIndex] : null
+  const currentComment = comments ? comments[currentCommentIndex] : {}
 
   return (
     <div className="widget widget-comments" style={{ backgroundColor }}>
       <h1 className="title">{name}</h1>
 
       <div className={`comment-container ${effectClassName}`}>
-        <h3><span className="name">{currentComment && currentComment.title}</span></h3>
-        <p className="comment">{currentComment && currentComment.body}</p>
+        <h3><span className="name">{currentComment.title}</span></h3>
+        <p className="comment">{currentComment.body}</p>
       </div>
 
       <p className="updated-at">{lastUpdate.toLocaleTimeString()}</p>
