@@ -40,7 +40,7 @@ export default function CommentsWidget({ widget: { node, state: { comments } } }
     return () => clearTimeout(handler)
   }, [nextIn, comments])
 
-  const currentComment = comments ? comments[currentCommentIndex] : {}
+  const currentComment = comments ? (comments[currentCommentIndex] || []) : {}
 
   return (
     <div className="widget widget-comments" style={{ backgroundColor }}>
