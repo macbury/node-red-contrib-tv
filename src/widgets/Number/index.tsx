@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines'
 import "./number.scss"
 import { IWidgetProps } from '../Repository'
 
@@ -8,6 +9,7 @@ interface INumberConfig {
   color: string,
   moreInfo: string,
   stufix: string
+  history?: number[]
 }
 
 function getValueChange(diff) {
@@ -34,8 +36,9 @@ function formatFixed(value : number) {
 }
 
 export default function NumberWidget({ widget } : IWidgetProps) {
-  const last = parseFloat(widget.state.last || 0)
-  const current = parseFloat(widget.state.current || 0)
+  const { current: currentRaw, last: lastRaw, history } = widget.state || {}
+  const last = parseFloat(lastRaw || 0)
+  const current = parseFloat(currentRaw || 0)
   const diff = last !== 0 ? Math.abs(Math.ceil((current - last) / last * 100)) : 0
   const change = getValueChange(current - last)
   const lastUpdate = useMemo(() => new Date(), [current])
@@ -50,6 +53,11 @@ export default function NumberWidget({ widget } : IWidgetProps) {
 
   return (
     <div className="widget widget-number" style={{ backgroundColor }}>
+      {history && <Sparklines data={history} >
+        <SparklinesLine color="rgba(255, 255, 255)" />
+        <SparklinesReferenceLine />
+      </Sparklines>}
+
       <h1 className="title">{name}</h1>
       <h2 className="value">{formatFixed(current)} {stufix}</h2>
 

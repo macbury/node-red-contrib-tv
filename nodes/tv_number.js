@@ -7,12 +7,13 @@ module.exports = function(RED) {
     let widget = dashboard.create(node, config)
 
     node.on('input', function(msg, done) {
-      let { payload, last } = msg
+      let { payload, last, history } = msg
       let current = payload || 0
 
       widget.setState({
         current,
-        last: last || 0
+        last: last || 0,
+        history
       })
 
       this.status({
@@ -22,7 +23,6 @@ module.exports = function(RED) {
       })
 
       dashboard.sync(widget)
-
 
       if (done) {
         done()
